@@ -6,12 +6,16 @@
 As funções de entrada e saída são essenciais para comunicação com o usuário.
 
 - **`printf`**: Exibe dados na tela.
+  
+  Use `printf` quando precisar mostrar algo para o usuário.
 
 ```c
 printf("Digite um número: ");
 ```
 
 - **`scanf`**: Lê dados fornecidos pelo usuário.
+
+  Use `scanf` para capturar um valor que o usuário vai digitar.
 
 ```c
 int numero;
@@ -152,7 +156,8 @@ int main() {
     
     // Exibindo os valores do array
     for (int i = 0; i < 3; i++) {
-        printf("Número %d: %d\n", i + 1, numeros[i]);
+        printf("Número %d: %d
+", i + 1, numeros[i]);
     }
     
     return 0;
@@ -198,7 +203,8 @@ int main() {
     scanf("%d", &valor);
     
     // Chamando a função dobro e exibindo o resultado
-    printf("O dobro de %d é %d\n", valor, dobro(valor));
+    printf("O dobro de %d é %d
+", valor, dobro(valor));
     
     return 0;
 }
@@ -251,9 +257,12 @@ int main() {
     scanf("%f", &aluno1.nota);
     
     // Exibindo os dados
-    printf("Nome: %s\n", aluno1.nome);
-    printf("Idade: %d\n", aluno1.idade);
-    printf("Nota: %.2f\n", aluno1.nota);
+    printf("Nome: %s
+", aluno1.nome);
+    printf("Idade: %d
+", aluno1.idade);
+    printf("Nota: %.2f
+", aluno1.nota);
     
     return 0;
 }
@@ -263,13 +272,13 @@ int main() {
 
 ## 7. **Manipulação de Strings**
 
-Strings são arrays de caracteres terminados em `\0`.
+Strings são arrays de caracteres terminados em ` `.
 
-- **`gets` e `puts`**: Funções para ler e exibir strings.
+- **`fgets` e `puts`**: Funções para ler e exibir strings de forma segura.
 
 ```c
 char nome[50];
-gets(nome);  // Lê a string
+fgets(nome, sizeof(nome), stdin);  // Lê a string
 puts(nome);  // Exibe a string
 ```
 
@@ -286,15 +295,17 @@ int main() {
     
     // Recebendo duas palavras
     printf("Digite a primeira palavra: ");
-    gets(palavra1);
+    fgets(palavra1, sizeof(palavra1), stdin);
     printf("Digite a segunda palavra: ");
-    gets(palavra2);
+    fgets(palavra2, sizeof(palavra2), stdin);
     
     // Comparando as palavras
     if (strcmp(palavra1, palavra2) == 0) {
-        printf("As palavras são iguais.\n");
+        printf("As palavras são iguais.
+");
     } else {
-        printf("As palavras são diferentes.\n");
+        printf("As palavras são diferentes.
+");
     }
     
     return 0;
